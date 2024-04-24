@@ -1,0 +1,28 @@
+.d-flex-center{ 
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50%;
+}
+
+.gap-input{
+    margin-top: 10%;
+}
+
+.validators {
+    width: 100%;
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.submit{ 
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    margin-top: 20px;
+}
+
+.form-center {
+    display: flex;
+    flex-direction: column;
+}
