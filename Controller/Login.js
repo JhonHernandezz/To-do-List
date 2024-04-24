@@ -13,11 +13,9 @@ export class InstToken {
         return new Promise((resolve,reject) => {
             db.query(`select * from user where username = "${username}" && password = "${password}" `, async(err, data) => { 
                          
-                console.log(data.length);
-
                 if (data.length == 0) {
                     
-                    return res.send({status: 200, message: 'Error en el usuario o la contraseña'});
+                    return res.send({status: 400, message: 'Error en el usuario o la contraseña'});
                    
                 } else {
                     const encoder = new TextEncoder();

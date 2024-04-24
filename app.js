@@ -8,8 +8,8 @@ import storageUser from './View/User.js'
 dotenv.config('/')
 
 let appExpress = express()
-appExpress.use(cors())
 appExpress.use(express.json())
+appExpress.use(cors())
 
 appExpress.use('/login', storageLogin)
 appExpress.use('/list', storageUser)

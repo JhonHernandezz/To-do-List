@@ -4,6 +4,6 @@ import { InstToken } from "../Controller/Login.js";
 
 let storageLogin = Router()
 
-storageLogin.get('/', InstToken.generateToken)
+storageLogin.post('/', InstToken.generateToken)
 
 export default storageLogin
