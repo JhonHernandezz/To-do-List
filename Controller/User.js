@@ -8,7 +8,7 @@ export class InstUser {
        let { id } = req.data.payload.data[0]
 
         return new Promise((resolve,reject) => {
-            db.query(`select name, list.description as description_list, state.description as description_state, date_start, date_end from list INNER JOIN state ON list.id_state = state.id where id_user = ${id}`, async (err, data) => { 
+            db.query(`select list.id as id_list, name, id_state, list.description as description_list, state.description as description_state, date_start, date_end from list INNER JOIN state ON list.id_state = state.id where id_user = ${id}`, async (err, data) => { 
                     if (err) {
                         return res.send({status: 200, message: 'Error al consultar los datos'})
                     } else {

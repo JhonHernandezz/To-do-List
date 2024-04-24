@@ -26,9 +26,16 @@ export class AuthPage implements OnInit {
 
     try {
 
+      let result;
+
+      console.log(result);
+      
+
       let config = {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify({ username, password })
       }
       
@@ -36,7 +43,6 @@ export class AuthPage implements OnInit {
 
       const contentType = respuesta.headers.get("Content-Type");
 
-      let result;
       if (contentType && contentType.includes("application/json")) {
         result = await respuesta.json(); // Procesar como JSON
       } else {

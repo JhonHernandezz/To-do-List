@@ -1,3 +1,44 @@
-<p>
-  view works!
-</p>
+<ion-button class="button-exit" (click)="exit()">
+  <ion-icon slot="start" name="exit"></ion-icon>
+</ion-button>
+
+<h1 class="title-view">LIST</h1>
+
+<div class="general-div">
+  @for (task of tasks; track task.id_list) {
+    <div class="content-info-view" 
+            [class.not-started]="task.description_state === 'sin empezar'"
+            [class.in-process]="task.description_state === 'en progreso'"
+            [class.paused]="task.description_state === 'por hacer'"
+            [class.done]="task.description_state === 'terminado'"
+        >
+            <div class="content-title-status-view">
+                <h2 class="title-task">{{task.name}}</h2>
+                <div class="content-status-view">
+                    <h3 class="text-status-view">{{task.description_state}}</h3>
+                    <div class="icon-status-view" 
+                        [class.not-started-background]="task.description_state === 'sin empezar'"
+                        [class.in-process-background]="task.description_state === 'en progreso'"
+                        [class.paused-background]="task.description_state === 'por hacer'"
+                        [class.done-background]="task.description_state === 'terminado'"
+                    ></div>
+                </div>
+            </div>
+            <p class="content-description-view">{{task.description_list}}</p>
+            <div class="content-date">
+              <h4 class="content-date-start">Start {{task.date_start | date: 'dd/MM/yyyy'}}</h4>
+              <h4 class="content-date-end">End {{task.date_end | date: 'dd/MM/yyyy'}}</h4>
+            </div>
+            <button class="button-option-up">
+              <ion-icon name="airplane-outline"></ion-icon>
+            </button>
+            <button class="button-option" (click)="deleteTask(task.id_list)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+        </div>
+  }
+</div>
+
+<ion-button class="btn-add">
+  <ion-icon name="add-outline"></ion-icon>
+</ion-button>

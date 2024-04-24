@@ -13,10 +13,10 @@ INSERT INTO state (id, description) VALUES
 (2, 'en progreso'),
 (3, 'terminado');
 
-INSERT INTO list (id, id_user, id_state, date_start, date_end, name, description) VALUES
-(1, 1, 1, "2023/09/18", "2023/09/18",  'Tarea de ingles', 'Desarrollar la tarea de ingles'),
-(2, 1, 2,  "2023/09/18", "2023/09/20", 'Tarea de biologia', 'Desarrollar la tarea de biologia'),
-(3, 2, 3,  "2023/09/18",  "2023/09/28", 'Tarea de español', 'Desarrollar la tarea de español');
+INSERT INTO list (id_user, id_state, date_start, date_end, name, description) VALUES
+(1, 1, "2023/09/18", "2023/09/18",  'Tarea de ingles', 'Desarrollar la tarea de ingles'),
+(1, 2,  "2023/09/18", "2023/09/20", 'Tarea de biologia', 'Desarrollar la tarea de biologia'),
+(2, 3,  "2023/09/18",  "2023/09/28", 'Tarea de español', 'Desarrollar la tarea de español');
 
 
 select name, list.description, state.description, date_start, date_end from list INNER JOIN state ON list.id_state = state.id where id_user = 1;

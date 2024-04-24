@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view',
@@ -7,8 +8,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent  implements OnInit {
 
-  constructor() { }
+  tasks: any[] = [];
 
-  ngOnInit() {}
+  constructor( private router: Router ) { }
+
+  ngOnInit() {
+    this.consultListTask()
+  }
+
+  exit() {
+
+    localStorage.removeItem('token')
+    this.router.navigate(['/auth']);
+    
+  }
+
+  async consultListTask() {
+    try {
+
+      let token = localStorage.getItem('token')      
+
+      let config = {
+        method: "GET",
+        headers: { 
+          "Content-Type": "application/json",
+          "Authorization": `${token}`,
+        }
+      }
+      
+      let respuesta = await (await fetch(`http://127.10.10.10:5130/list`, config)).json()
+
+      this.tasks = respuesta
+      
+    } catch (error) {
+      alert(error)
+    }
+  }
+
+  async deleteTask(id: number) {
+    
+    let token = localStorage.getItem('token')      
+
+    let config = {
+      method: "DELETE",
+      headers: { 
+        "Content-Type": "application/json",
+        "Authorization": `${token}`,
+      }
+    }
+
+    let respuesta = await (await fetch(`http://127.10.10.10:5130/list/${id}`, config)).json()
+
+    alert(respuesta.message);
+
+    this.consultListTask()
+  }
 
 }
