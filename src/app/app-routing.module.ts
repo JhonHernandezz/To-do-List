@@ -2,8 +2,13 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ViewComponent } from './shared/components/view/view.component';
 import { AddComponent } from './shared/components/add/add.component';
+import { UpdateComponent } from './shared/components/update/update.component';
 
 const routes: Routes = [
+  { 
+    path: 'update', 
+    component: UpdateComponent 
+  },
   { 
     path: 'view', 
     component: ViewComponent 

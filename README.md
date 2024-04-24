@@ -5,6 +5,9 @@ Esta aplicación de lista de tareas te ayuda a mantenerte organizado y productiv
 
 [img database](./src/assets/img/Diagrama%20en%20blanco.png)
 
+# El proyecto esta realizado con MYSQL, ya que SQL Server me presentaba fallos.
+
+
 ## INSTALACION 
 
 1. Asegurate de tener Node.js instalado en tu computadora. De no ser así, descargalo e instala Node js

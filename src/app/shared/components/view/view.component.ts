@@ -45,6 +45,18 @@ export class ViewComponent  implements OnInit {
     }
   }
 
+  updateTask(id: number, id_state: number, date_end: Date, name: string, description_list: string) {
+    this.router.navigate(['/update'], {
+      queryParams: {
+        id,
+        id_state,
+        date_end: date_end,
+        name,
+        description_list,
+      },
+    });
+  }
+
   async deleteTask(id: number) {
     
     let token = localStorage.getItem('token')      

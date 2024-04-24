@@ -6,11 +6,12 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewComponent } from './components/view/view.component';
 import { AddComponent } from './components/add/add.component';
+import { UpdateComponent } from './components/update/update.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, InputComponent, ViewComponent, AddComponent],
+  declarations: [HeaderComponent, InputComponent, ViewComponent, AddComponent, UpdateComponent],
   exports: [HeaderComponent, InputComponent, ReactiveFormsModule],
   imports: [
     CommonModule,

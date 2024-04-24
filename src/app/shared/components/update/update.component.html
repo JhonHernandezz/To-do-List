@@ -1,0 +1,40 @@
+<form>
+
+  <div class="gap-input">
+    <input 
+      class="input-user"
+      id="taskName" 
+      type="text" 
+      icon="navigate-outline"
+      [value]="task.id_state" 
+    />
+  </div>
+  
+  <div class="gap-input">
+    <input 
+      class="input-user"
+      id="taskName" 
+      type="text" 
+      icon="navigate-outline"
+      [value]="task.name" 
+    />
+  </div>
+  <div class="gap-input">
+    <input 
+      class="input-user"
+      id="taskDescription" 
+      type="text" 
+      icon="navigate-outline"
+      [value]="task.description_list" 
+    />
+  </div>
+ 
+
+  <ion-button expand="block" mode="ios" class="submit" type="submit">
+    Agregar
+  </ion-button>
+  <ion-button expand="block" mode="ios" class="cancel" (click)="cancel()" type="submit">
+    Cancelar
+  </ion-button>
+
+</form>

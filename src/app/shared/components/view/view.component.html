@@ -29,7 +29,7 @@
               <h4 class="content-date-start">Start {{task.date_start | date: 'dd/MM/yyyy'}}</h4>
               <h4 class="content-date-end">End {{task.date_end | date: 'dd/MM/yyyy'}}</h4>
             </div>
-            <button class="button-option-up">
+            <button class="button-option-up" (click)="updateTask(task.id_list, task.id_state, task.date_end, task.name, task.description_list)">
               <ion-icon name="airplane-outline"></ion-icon>
             </button>
             <button class="button-option" (click)="deleteTask(task.id_list)">
