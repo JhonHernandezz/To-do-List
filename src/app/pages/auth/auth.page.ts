@@ -24,12 +24,7 @@ export class AuthPage implements OnInit {
     const username = this.form.value.username; // Guardar los datos
     const password = this.form.value.password;
 
-    try {
-
-      let result;
-
-      console.log(result);
-      
+    try {    
 
       let config = {
         method: "POST",
@@ -43,6 +38,8 @@ export class AuthPage implements OnInit {
 
       const contentType = respuesta.headers.get("Content-Type");
 
+      let result;  
+      
       if (contentType && contentType.includes("application/json")) {
         result = await respuesta.json(); // Procesar como JSON
       } else {

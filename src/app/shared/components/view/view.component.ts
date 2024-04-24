@@ -64,4 +64,8 @@ export class ViewComponent  implements OnInit {
     this.consultListTask()
   }
 
+  add() {
+    this.router.navigate(['/add']);
+  }
+
 }

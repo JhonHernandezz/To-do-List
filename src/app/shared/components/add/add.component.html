@@ -1,0 +1,65 @@
+<div class="form-add">
+  <form [formGroup]="form" (submit)="submit()" (keypress.enter)="submit()" class="form-center">
+    <app-input
+      class="input-user"
+      autocomplete="username"
+      [control]="form.controls.id_state" 
+      icon="chevron-up-circle-outline"
+      type="number"
+      label="ID State"
+    ></app-input>
+  
+    <div class="gap-input">
+      <app-input
+        class="input-user"
+        autocomplete="username"
+        [control]="form.controls.name" 
+        icon="navigate-outline"
+        type="text"
+        label="Name"
+      ></app-input>
+    </div>
+
+    <div class="gap-input">
+      <app-input
+        class="input-user"
+        autocomplete="username"
+        [control]="form.controls.descrription" 
+        icon="chatbubble-ellipses-outline"
+        type="text"
+        label="Description"
+      ></app-input>
+    </div>
+  
+    <div class="gap-input">
+      <app-input
+        class="input-user"
+        autocomplete="username"
+        [control]="form.controls.date_start" 
+        icon="calendar-number-outline"
+        type="date"
+        label="Date Start"
+      ></app-input>
+    </div>
+
+    <div class="gap-input-end">
+      <app-input
+        class="input-user"
+        autocomplete="username"
+        [control]="form.controls.date_end" 
+        icon="calendar-number-outline"
+        type="date"
+        label="Date End"
+      ></app-input>
+    </div>
+  
+    <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid">
+      Agregar
+    </ion-button>
+    <ion-button expand="block" mode="ios" class="cancel" (click)="cancel()" type="submit">
+      Cancelar
+    </ion-button>
+
+  
+  </form>
+</div>

@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ViewComponent } from './shared/components/view/view.component';
+import { AddComponent } from './shared/components/add/add.component';
 
 const routes: Routes = [
   { 
     path: 'view', 
     component: ViewComponent 
+  },
+  { 
+    path: 'add', 
+    component: AddComponent 
   },
   {
     path: '',
